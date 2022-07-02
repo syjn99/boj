@@ -14,11 +14,11 @@ func main() {
 
 	fmt.Fscanln(r, &N)
 
-	m := make(map[int]bool)
+	m := make(map[int]int)
 
 	for i := 0; i < N; i++ {
 		fmt.Fscan(r, &x)
-		m[x] = true
+		m[x]++
 	}
 
 
@@ -26,11 +26,7 @@ func main() {
 
 	for i := 0; i < M; i++ {
 		fmt.Fscan(r, &x)
-		if m[x] {
-			fmt.Fprintf(w, "%d ", 1)
-		} else {
-			fmt.Fprintf(w, "%d ", 0)
-		}
+		fmt.Fprintf(w, "%d ", m[x])
 	}
 
 	fmt.Fprintf(w, "\n")
